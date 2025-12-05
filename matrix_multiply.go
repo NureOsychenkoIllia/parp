@@ -16,9 +16,10 @@ const SIZE = 512
 // multiplySequential виконує послідовне множення матриць
 func multiplySequential(a, b, c [][]float64, n int) {
 	for i := 0; i < n; i++ {
-		for j := 0; j < n; j++ {
-			for k := 0; k < n; k++ {
-				c[i][j] += a[i][k] * b[k][j]
+		for k := 0; k < n; k++ {
+			temp := a[i][k]
+			for j := 0; j < n; j++ {
+				c[i][j] += temp * b[k][j]
 			}
 		}
 	}
